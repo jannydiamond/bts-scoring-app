@@ -1,6 +1,6 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.0.0",
+  "name": "bts-scoring-app",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "start": "vite",
@@ -15,6 +15,9 @@
     "vite-plugin-solid": "^2.5.0"
   },
   "dependencies": {
-    "solid-js": "^1.6.10"
-  }
+    "solid-js": "^1.6.10",
+    "solid-styled-components": "^0.28.5",
+    "vite-tsconfig-paths": "^4.2.0"
+  },
+  "packageManager": "pnpm@8.3.1"
 }
