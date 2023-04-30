@@ -6,13 +6,14 @@ type Props = {
   id: string
   label: string
   max?: number
+  onChange?: EventListener
 }
 
 const AmountInput = (props: Props) => {
   return (
     <FormGroup>
       <Label for={props.id}>{props.label}</Label>
-      <Input id={props.id} type="number" value="0" step="1" min="0" max={props.max} />
+      <Input id={props.id} type="number" value="0" step="1" min="0" max={props.max} onChange={props.onChange} />
     </FormGroup>
   )
 }

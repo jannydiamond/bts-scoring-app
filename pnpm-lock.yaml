@@ -1,6 +1,12 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@fontsource/open-sans':
+    specifier: ^4.5.14
+    version: 4.5.14
+  '@fontsource/raleway':
+    specifier: ^4.5.12
+    version: 4.5.12
   solid-js:
     specifier: ^1.6.10
     version: 1.6.10
@@ -514,6 +520,14 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@fontsource/open-sans@4.5.14:
+    resolution: {integrity: sha512-mBXIIETBlW8q/ocuUN0hyGow2iuf75hQEHQt8R/RJ/HcphVbLg8KB7pHYGbFGDqs75W+SWvTC7JkVeAjT65BuQ==}
+    dev: false
+
+  /@fontsource/raleway@4.5.12:
+    resolution: {integrity: sha512-uKs13d6NFWU4vf5LSDHK/cbaAw+UXkzz03fKjyvkKq8Nop+CeB6o8STEDkZD9/uOo3v3sgm59Wyw8uGWvxoCiA==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
