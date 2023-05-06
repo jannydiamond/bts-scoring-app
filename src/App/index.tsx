@@ -4,6 +4,7 @@ import Fieldset from 'components/__styled__/Fieldset'
 import FormGroup from 'components/__styled__/FormGroup'
 import Legend from 'components/__styled__/Legend'
 import Score from 'components/__styled__/Score'
+import Submit from 'components/__styled__/Submit'
 import type { Component } from 'solid-js'
 import { createStore } from 'solid-js/store'
 
@@ -21,6 +22,8 @@ type State = {
   automationTrack: number
   eventCards: number
   achievements: number
+  leaders: number
+  score: number
 }
 
 const App: Component = () => {
@@ -38,6 +41,8 @@ const App: Component = () => {
     automationTrack: 0,
     eventCards: 0,
     achievements: 0,
+    leaders: 0,
+    score: 0,
   })
 
   const calculateScoring = (state: State) => {
@@ -54,8 +59,9 @@ const App: Component = () => {
     const automationTrack = state.automationTrack
     const eventCards = state.eventCards
     const achievements = state.achievements
+    const leaders = state.leaders
 
-    return (
+    const score =
       amountStage1Tech +
       amountStage2Tech +
       amountStage3Tech +
@@ -68,8 +74,10 @@ const App: Component = () => {
       amountControlledLocations +
       automationTrack +
       eventCards +
-      achievements
-    )
+      achievements +
+      leaders
+
+    setState('score', score)
   }
 
   const handleAmountStage1TechChange = (event: any) => {
@@ -122,6 +130,10 @@ const App: Component = () => {
 
   const handleAchievementsChange = (event: any) => {
     setState('achievements', parseInt(event.target.value))
+  }
+
+  const handleLeadersChange = (event: any) => {
+    setState('leaders', parseInt(event.target.value))
   }
 
   return (
@@ -210,9 +222,15 @@ const App: Component = () => {
           />
           <AmountInput id="achievements" label="Victory Points from Achievements" onChange={handleAchievementsChange} />
         </Fieldset>
+
+        <Fieldset>
+          <Legend>Expansion</Legend>
+          <AmountInput id="leaders" label="Victory Points from Leaders" onChange={handleLeadersChange} />
+        </Fieldset>
       </form>
-      <h2>Scoring</h2>
-      <Score>{calculateScoring(state)}</Score>
+      <Submit onClick={() => calculateScoring(state)}>Calculate Score</Submit>
+      <h2>Current Score</h2>
+      <Score>{state.score}</Score>
     </>
   )
 }
